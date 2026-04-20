@@ -1,0 +1,161 @@
+body{
+    background-color: rgb(36, 37, 37);
+   
+    display: flex;
+    justify-content:center;
+    padding: 50px ;
+    /* align-items: center; */
+    height: 100vh;
+    margin: 0px ;
+    font-family: sans-serif;
+}
+#clock{
+    font-size: 50px;
+    color: aqua;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    text-shadow: 
+    0 0 5px rgb(10, 129, 94),
+    0 0 10px rgb(10, 129, 94),
+    0 0 20px rgb(10, 129, 94),
+    0 0 40px rgb(17, 148, 109); 
+}
+.clock-container{
+    background-color: rgb(73, 77, 76);
+    width: 600px;
+    height: 750px;
+    border-radius: 15px;
+    box-shadow:  0 20px 50px rgb(4, 226, 159);
+    border: 2px solid rgb(130, 236, 213);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: relative;
+}
+.line{
+    width: 80%;
+    height: 3px;
+    margin-top: 10px;
+
+    background: linear-gradient(90deg, transparent, aqua, transparent);
+    border-radius: 50px;
+
+    animation: glow 2s infinite;
+}
+@keyframes glow {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+/* 
+
+ */
+
+ /* تنسيق منطقة الإدخال */
+.alarm-input-area {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.time-selectors input {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid aqua;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    outline: none;
+}
+
+#addAlarmBtn {
+    background: #1be0af; /* لون أزرق مثل الصورة */
+    color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* تنسيق قائمة المنبهات */
+.alarms-list {
+    width: 90%;
+    margin-top: 25px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10 px;
+    
+}
+
+.alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+.alarm-info {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.alarm-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* زر الـ Toggle (التفعيل والإطفاء) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input { display: none; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; width: 16px;
+    left: 2px; bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #25eb9f; }
+input:checked + .slider:before { transform: translateX(20px); }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
