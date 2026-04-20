@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> The Time </title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="clock-container">
+        
+    <div id="clock"> 00:00:00 </div>  
+   
+   
+    <div class="line"></div>
+
+    <div class="alarm-input-area">
+        <div class="time-selectors">
+            <input type="number" id="alarmHour" placeholder="HH" min="0" max="23">
+            <input type="number" id="alarmMinute" placeholder="MM" min="0" max="59">
+        </div>
+        <button id="addAlarmBtn">Add Alarm</button>
+    </div>
+
+    <div id="alarmsList" class="alarms-list"></div>
+</div>
+
+//<div id="ringingInterface" style="display: none; margin-top: 20px; text-align: center;">
+    <h2 style="color: aqua; animation: glow 1s infinite;">Alarm is Ringing!</h2>
+    <button id="snoozeBtn" style="background: orange; color: white; border: none;
+     padding: 10px 20px; border-radius: 20px; cursor: pointer; margin-right: 10px;">
+                                  Snooze (2 min)</button>
+    <button id="stopBtn" style="background: red; color: white; border: none;
+    padding: 10px 20px; border-radius: 20px; cursor: pointer;">Stop</button>
+
+<audio id="alarmSound" src="Best Friend.mp3" loop></audio>
+    </div>
+    
+    
+    <input type="time" id="timepicker" style="display: none;">
+    <script src="main.js"></script>
+</body>
+</html>
